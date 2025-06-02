@@ -1,6 +1,8 @@
 const mongoose = require('mongoose')
 
-const dbURI = 'mongodb+srv://myatlasdbuser:myatlasdbuser@cluster0.qaz81mk.mongodb.net/Loc8r'  
+const dbURI = process.env.MONGO_URL
+
+mongoose.set("strictQuery", false);
 mongoose.connect(dbURI,{useNewUrlParser: true})
 
 mongoose.connection.on('connected',function(){
