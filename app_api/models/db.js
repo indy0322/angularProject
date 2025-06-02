@@ -1,12 +1,12 @@
 const mongoose = require('mongoose')
 
-const dbURI = process.env.MONGDB_URL
+const dbURI = process.env.MONGODB_URL
 
 mongoose.set("strictQuery", false);
-mongoose.connect(dbURI,{useNewUrlParser: true})
+mongoose.connect(process.env.MONGODB_URL,{useNewUrlParser: true})
 
 mongoose.connection.on('connected',function(){
-    console.log('Mongoose connected to ' + dbURI)
+    console.log('Mongoose connected to ' + process.env.MONGODB_URL)
 })
 
 mongoose.connection.on('error',function(err){
