@@ -5,7 +5,10 @@ const apiOptions = {server: 'http://localhost:3000'}
 
 if(process.env.NODE_ENV == 'production'){
     apiOptions.server = 'https://kimseungmin.onrender.com'
+    console.log("production status")
     //apiOptions.server = 'https://loc8r-data-147ca6428ac3.herokuapp.com'
+}else{
+    console.log("develop status")
 }
 
 /*const path = '/api/locations'
